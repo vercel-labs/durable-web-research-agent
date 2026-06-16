@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --background: #020202;
+  --foreground: #f1f1f1;
+  --muted: #8c8c8c;
+  --muted-strong: #b5b5b5;
+  --border: #202020;
+  --border-strong: #343434;
+  --accent: #f4f4f4;
+  --danger: #ff6b7a;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), "SFMono-Regular", Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+  font-optical-sizing: auto;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 260px),
+    radial-gradient(1200px 560px at 50% -20%, rgba(255, 255, 255, 0.06), transparent 62%),
+    #020202;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+button,
+textarea,
+input {
+  font: inherit;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum" 1, "ss11" 1;
+}
+
+a {
+  color: var(--accent);
+}
+
+::selection {
+  background: #ededed;
+  color: #000;
+}
